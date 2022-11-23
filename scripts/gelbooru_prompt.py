@@ -20,6 +20,8 @@ def fetch(image):
 	name = image.orig_name
 	print("name: " + name)
 	hash = name.split(".")[0]
+	if hash.startswith("sample_"):
+		hash = hash.lstrip("sample_")
 	print("hash: " + hash)
 	#update global hash
 	
@@ -35,9 +37,7 @@ def fetch(image):
 				found = link
 				break
 	if found is not None:
-		if found.startswith("sample_"):
-			found = found.replace("sample_", "")
-		#print("FOUND: " + found)
+		print("FOUND: " + found)
 		req = requests.get(found, 'html.parser') 
 		soup = BeautifulSoup(req.content , 'html.parser')
 		#tag_data = soup.find_all("textarea")
