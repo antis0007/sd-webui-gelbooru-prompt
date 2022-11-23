@@ -19,6 +19,13 @@ All you need to do is hit the "Get Tags" button, and it will put the fetched tag
 
 You can now use these tags in any prompt crafting you'd like to do. Enjoy!
 
+### Requirements:
+This extensions requires beautifulsoup4, you'll need to install it to either your venv or globally depending on your setup
+
+[inside venv/Scripts]
+> activate
+
+> pip install beautifulsoup4
 
 ## Showcase / Usage:
 ![example_image](https://user-images.githubusercontent.com/31860133/203446389-01914338-0a1d-4d73-9341-e4101cadfcf7.png)
