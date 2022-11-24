@@ -21,10 +21,8 @@ def fetch(image):
 	print("name: " + name)
 	hash = name.split(".")[0]
 	if hash.startswith("sample_"):
-		hash = hash.lstrip("sample_")
+		hash = hash.replace("sample_", "")
 	print("hash: " + hash)
-	#update global hash
-	
 
 	url = "https://gelbooru.com/index.php?page=post&s=list&tags=md5%3a" + hash
 	req = requests.get(url, 'html.parser')
