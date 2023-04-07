@@ -16,6 +16,12 @@ def on_ui_settings():
 def fetch(image):
 	#update hash based on image
 	name = image.orig_name
+	#image.orig_name returns the path of the image, so we need to get the name of the file from that path
+	#make this work for windows and linux
+	if "\\" in name:
+		name = name.split("\\")[-1]
+	elif "/" in name:
+		name = name.split("/")[-1]
 	print("name: " + name)
 	hash = name.split(".")[0]
 	if hash.startswith("sample_"):
