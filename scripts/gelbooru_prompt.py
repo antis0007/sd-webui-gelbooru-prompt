@@ -18,7 +18,7 @@ def on_ui_settings():
 
 def fetch(image):
     # update hash based on image
-    name = image.orig_name
+    name = image.name
     # image.orig_name returns the path of the image, so we need to get the name of the file from that path
     # make this work for windows and linux
     if "\\" in name:
@@ -64,7 +64,7 @@ class BooruPromptsScript(scripts.Script):
         with gr.Group():
             with gr.Accordion("Gelbooru Prompt", open=False):
                 fetch_tags = gr.Button(value='Get Tags', variant='primary')
-                image = gr.File(type="file", label="Image with MD5 Hash")
+                image = gr.File(type="filepath", label="Image with MD5 Hash")
 
             with contextlib.suppress(AttributeError):
                 if is_img2img:
